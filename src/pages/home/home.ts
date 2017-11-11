@@ -13,8 +13,12 @@ export class HomePage {
     decsription: string,
     complete: boolean,
   }[];
+
   constructor(public navCtrl: NavController) {
 
   }
 
+  ngOnInit() {
+    this.todos = todos;
+  }
 }
