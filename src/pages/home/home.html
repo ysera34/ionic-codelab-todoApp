@@ -12,7 +12,9 @@
       <h2>{{todo.title}}</h2>
       <p>{{todo.description}}</p>
     </ion-item>
-    <button ion-item *ngFor="let todo of todos">
+    <button ion-item
+    (click)="openTodoPage(todo.id)"
+    *ngFor="let todo of todos">
       <h2>{{todo.title}}</h2>
       <p>{{todo.description}}</p>
       <div item-end *ngIf="todo.complete">

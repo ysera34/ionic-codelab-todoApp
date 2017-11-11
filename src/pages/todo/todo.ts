@@ -13,13 +13,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   selector: 'page-todo',
   templateUrl: 'todo.html',
 })
-export class TodoPage {
+export class TodoPage implements OnInit {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TodoPage');
+  }
+
+  ngOnInit() {
+    // angular function
+    console.log(this.navParams.get('id'));
   }
 
 }
