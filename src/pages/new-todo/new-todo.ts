@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController, AlertController } from 'ionic-angular';
 
 import todos from '../../data/todos';
 
@@ -30,7 +30,7 @@ export class NewTodoPage {
 
   constructor(
     public navCtrl: NavController, public navParams: NavParams,
-    public viewCtrl: ViewController) {
+    public viewCtrl: ViewController, public alertCtrl: AlertController) {
   }
 
   ionViewDidLoad() {
@@ -38,11 +38,24 @@ export class NewTodoPage {
   }
 
   saveTodo() {
-    todos.push(this.todo);
-    this.dismiss();
+    if (this.todo.title == "" || this.todo.description == "") {
+      this.showAlert();
+    } else {
+      todos.push(this.todo);
+      this.dismiss();
+    }
   }
 
   dismiss() {
     this.viewCtrl.dismiss();
+  }
+
+  showAlert() {
+    let alert = this.alertCtrl.create({
+      title: 'Notification!',
+      subTitle: 'Please input title and description!',
+      buttons: ['OK']
+    });
+    alert.present();
   }
 }
