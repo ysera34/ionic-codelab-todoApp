@@ -35,4 +35,8 @@ export class HomePage {
     let modal = this.modalCtrl.create(NewTodoPage);
     modal.present();
   }
+
+  deleteTodo(todoId) {
+    this.todos.splice(todoId - 1, 1);
+  }
 }
