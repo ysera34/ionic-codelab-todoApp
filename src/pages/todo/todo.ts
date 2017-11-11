@@ -33,7 +33,12 @@ export class TodoPage implements OnInit {
   ngOnInit() {
     // angular function
     // console.log(this.navParams.get('id'));
-    this.todo = this.getTodo(this.navParams.get('id'))
+
+    // inter binding
+    // this.todo = this.getTodo(this.navParams.get('id'))
+
+    // temporarily object
+    this.todo = Object.assign({}, this.getTodo(this.navParams.get('id')))
   }
 
   getTodo(todoId) {
@@ -43,5 +48,10 @@ export class TodoPage implements OnInit {
       }
     }
     return undefined;
+  }
+
+  updateTodo() {
+    todos[this.todo.id - 1] = this.todo
+    this.navCtrl.popToRoot();
   }
 }
