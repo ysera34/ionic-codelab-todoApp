@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, ModalController } from 'ionic-angular';
 
 import todos from '../../data/todos'; // export default
 import { TodoPage } from '../todo/todo'; // export module
+import { NewTodoPage } from '../new-todo/new-todo'; // export module
 
 @Component({
   selector: 'page-home',
@@ -16,7 +17,7 @@ export class HomePage {
     complete: boolean,
   }[];
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public modalCtrl: ModalController) {
 
   }
 
@@ -28,5 +29,10 @@ export class HomePage {
     // navigation controller : NavController
     // page stack structure, push and pop
     this.navCtrl.push(TodoPage, { id: todoId})
+  }
+
+  openNewTodo() {
+    let modal = this.modalCtrl.create(NewTodoPage);
+    modal.present();
   }
 }
