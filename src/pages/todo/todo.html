@@ -7,12 +7,28 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>todo</ion-title>
+    <ion-title>Description</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+  <ion-list>
+    <ion-item>
+      <ion-input type="text"
+      [(ngModel)]="todo.title"
+      placeholder="title"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-textarea rows="5"
+        [(ngModel)]="todo.description"
+         placeholder="description"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label>Complete</ion-label>
+      <ion-checkbox
+      [(ngModel)]="todo.complete" ></ion-checkbox>
+    </ion-item>
+  </ion-list>
 </ion-content>
