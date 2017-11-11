@@ -2,31 +2,31 @@ export default [
   {
       id: 1,
       title: 'php',
-      decsription: 'codeignitor',
-      complete: false,
+      description: 'codeignitor',
+      complete: true,
   },
   {
       id: 2,
       title: 'react',
-      decsription: 'reactJS',
+      description: 'reactJS',
       complete: false,
   },
   {
       id: 3,
       title: 'angular2-5',
-      decsription: 'angularJS5',
-      complete: false,
+      description: 'angularJS5',
+      complete: true,
   },
   {
       id: 4,
       title: 'typescript',
-      decsription: 'ms에서 만들다니.',
+      description: 'ms에서 만들다니.',
       complete: false,
   },
   {
       id: 5,
       title: 'ionic',
-      decsription: '벌써 3까지 나왔네...',
+      description: '벌써 3까지 나왔네...',
       complete: false,
   },
 ];
